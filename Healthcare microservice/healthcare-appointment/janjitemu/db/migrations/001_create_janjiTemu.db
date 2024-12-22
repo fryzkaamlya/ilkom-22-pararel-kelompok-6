@@ -1,0 +1,11 @@
+Sequel.migration do
+  change do
+    create_table(:Janji_Temu) do
+      primary_key :id
+      foreign_key :Id_Dokter, :Dokter, key: :id  # Mengacu pada tabel doctors
+      foreign_key :Id_Pasien, :Pasien, key: :id    # Mengacu pada tabel pasien
+      DateTime :Tanggal         # Menyimpan tanggal dan waktu janji
+      String :Tujuan            # Menyimpan tujuan janji temu
+    end
+  end
+end
